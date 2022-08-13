@@ -1,9 +1,10 @@
 /*
  * @Author: liruiqing@mediway.cn 
- * @Date: 2022-03-12 10:59:15 
- * @Last Modified by: liruiqing@mediway.cn
- * @Last Modified time: 2022-06-20 17:45:47
+ * @Date: 2022-08-13 09:23:12 
+ * @Last Modified by:   liruiqing@mediway.cn 
+ * @Last Modified time: 2022-08-13 09:23:12 
  */
+
 import Params, { addRule } from '../../utils/params-util'
 import { Base64 } from 'js-base64'
 import { isFunction, isArray, isObject } from '../../utils/get-type'
@@ -34,7 +35,7 @@ export default {
 		const props = { ...this.$attrs }
 		const on = { ...this.$listeners }
 
-		return h('hos-form', {
+		return h('el-form', {
 			ref: 'form',
 			props,
 			on,

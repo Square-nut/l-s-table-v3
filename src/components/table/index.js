@@ -1,9 +1,10 @@
 /*
- * @Author: liruiqing@mediway.cn
- * @Date: 2022-03-12 10:58:29
- * @Last Modified by: liruiqing@mediway.cn
- * @Last Modified time: 2022-04-29 17:31:27
+ * @Author: liruiqing@mediway.cn 
+ * @Date: 2022-08-13 09:22:47 
+ * @Last Modified by:   liruiqing@mediway.cn 
+ * @Last Modified time: 2022-08-13 09:22:47 
  */
+
 import SingleArray from '../../utils/single-array';
 import { mapState } from 'vuex';
 import { timestamp, uid, event, params } from '../../utils/store-config';
@@ -48,7 +49,7 @@ const tableColumnParser = (() => {
 				}
 				const props = { ...v };
 				return h(
-					'hos-table-column',
+					'el-table-column',
 					tableColumnParser._parse.call(this, props, h),
 					Array.isArray(props.children)
 						? tableColumnParser.parse.call(this, props.children, h)
@@ -125,7 +126,7 @@ tableColumnParser.add(function ({ props, scopedSlots }, h) {
 			const isAll = value.has(this.$attrs.data, true);
 			const isIndeterminate = value.has(this.$attrs.data, false) && !isAll;
 			return (
-				<hos-checkbox
+				<el-checkbox
 					indeterminate={isIndeterminate}
 					value={isAll}
 					onInput={(isChecked) => {
@@ -139,7 +140,7 @@ tableColumnParser.add(function ({ props, scopedSlots }, h) {
 		};
 		scopedSlots.default = (prop) => {
 			return (
-				<hos-checkbox
+				<el-checkbox
 					value={this.value.some((v) => v[key] === prop.row[key])}
 					onInput={(isChecked) => {
 						this.$emit('input', value[isChecked ? 'add' : 'delete'](prop.row));
@@ -158,7 +159,7 @@ tableColumnParser.add(function ({ props, scopedSlots }, h) {
 		const key = props.key || 'id';
 		scopedSlots.default = (prop) => {
 			return (
-				<hos-radio
+				<el-radio
 					label={prop.row[key]}
 					value={this.value[key]}
 					onInput={(value) => {
@@ -169,7 +170,7 @@ tableColumnParser.add(function ({ props, scopedSlots }, h) {
 					}}
 				>
 					{props.prop ? prop.row[props.prop] : <span style="display:none" />}
-				</hos-radio>
+				</el-radio>
 			);
 		};
 	}
@@ -184,7 +185,7 @@ export default {
 				this.sUID === this.uid ||
 				(this.sUID === 0 && this.sEvent === 'doLayout')
 			) {
-				if (this.$refs['hos-table-lq']) this.$refs['hos-table-lq'].doLayout()
+				if (this.$refs['el-table-lq']) this.$refs['el-table-lq'].doLayout()
 			}
 		},
 	},
@@ -202,10 +203,10 @@ export default {
 		// 解析表格
 		const cols = tableColumnParser.parse.call(this, this.cols, h);
 		return h(
-			'hos-table',
+			'el-table',
 			{
-				ref: 'hos-table-lq',
-				attrs:{id: 'hos-table-lq'},
+				ref: 'el-table-lq',
+				attrs:{id: 'el-table-lq'},
 				props,
 				on,
 			},

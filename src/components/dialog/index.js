@@ -1,9 +1,10 @@
 /*
  * @Author: liruiqing@mediway.cn 
- * @Date: 2022-08-08 20:59:14 
- * @Last Modified by:   zhenjiaguwen123@gmail.cn 
- * @Last Modified time: 2022-08-08 20:59:14 
+ * @Date: 2022-08-13 09:23:28 
+ * @Last Modified by:   liruiqing@mediway.cn 
+ * @Last Modified time: 2022-08-13 09:23:28 
  */
+
 
 import { mapState } from "vuex";
 import { timestamp, uid, event, params } from "../../utils/store-config";
@@ -21,7 +22,7 @@ export default {
       if (this.sUID === "all" || this.sUID === this.uid) {
         this.visible = this.sEvent === "open";
       }
-      const title = document.querySelectorAll('.hos-dialog__wrapper');
+      const title = document.querySelectorAll('.el-dialog__wrapper');
       title.forEach(ele=> ele.removeAttribute('title'));
     },
   },
@@ -52,7 +53,7 @@ export default {
     )
 
     return h(
-      "hos-dialog",
+      "el-dialog",
       {
         props,
         on

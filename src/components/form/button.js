@@ -1,3 +1,10 @@
+/*
+ * @Author: liruiqing@mediway.cn 
+ * @Date: 2022-08-13 09:23:21 
+ * @Last Modified by:   liruiqing@mediway.cn 
+ * @Last Modified time: 2022-08-13 09:23:21 
+ */
+
 import { isPromise, isFunction } from '../../utils/get-type'
 
 
@@ -69,7 +76,7 @@ export default {
       }
     }
 
-    return <hos-button props={props} on={on}>{this.$slots.default}</hos-button>
+    return <el-button props={props} on={on}>{this.$slots.default}</el-button>
     
   }
 }

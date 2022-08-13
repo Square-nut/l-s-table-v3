@@ -1,9 +1,10 @@
 /*
  * @Author: liruiqing@mediway.cn 
- * @Date: 2022-03-12 10:58:52 
- * @Last Modified by: liruiqing@mediway.cn
- * @Last Modified time: 2022-06-09 17:16:25
+ * @Date: 2022-08-13 09:22:55 
+ * @Last Modified by:   liruiqing@mediway.cn 
+ * @Last Modified time: 2022-08-13 09:22:55 
  */
+
 import Params, { addRule } from '../../utils/params-util';
 export const COMPONENT_NAME = 'P';
 
@@ -64,7 +65,7 @@ export default {
 				this.$emit('size-change', val);
 			});
 		};
-		return h('hos-pagination', {
+		return h('el-pagination', {
 			props,
 			on,
 		}, this.$slots.default);
